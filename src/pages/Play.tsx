@@ -21,7 +21,10 @@ const Setup: React.FC = () => {
                     Some data collection stuff here...
                 </p>
                 <IonButton 
-                    onClick={(e) => hist.go(-2)}
+                    onClick={(e) => {
+                        hist.goBack();
+                        hist.goBack();
+                    }}
                 >
                     Done
                 </IonButton>            
