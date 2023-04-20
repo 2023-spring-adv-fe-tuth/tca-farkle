@@ -195,6 +195,8 @@ const App = () => {
     , chosenPlayers: []
   });
 
+	const [emailKeyInput, setEmailKeyInput] = useState("");
+
   // 
   // State hooks...
   // 
@@ -222,6 +224,7 @@ const App = () => {
           }
 
           if (!ignore) {
+            setEmailKeyInput(ek);            
             setEmailKeySaved(ek);            
           }
         } catch (err) {
@@ -288,7 +291,8 @@ const App = () => {
               reallyCoolThingHappenedPercent={getPercentGamesReallyCoolThingHappened(results)}
               countZeroTurns={countZeroTurns(results)}
               saveEmailKeyFunc={saveEmailKey}
-              currentEmail={emailKeySaved}
+              emailKeyInput={emailKeyInput}
+              setEmailKeyInput={setEmailKeyInput}
             />
           </Route>
 
