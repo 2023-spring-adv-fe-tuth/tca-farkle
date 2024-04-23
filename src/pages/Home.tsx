@@ -18,13 +18,13 @@ import {
 	IonInput,
 	IonIcon,
 } from '@ionic/react';
-import { moon, personCircle } from 'ionicons/icons';
 // import { MainContent } from '../components/MainContent';
 import { MainHeader } from '../components/index';
 import { LeaderboardPlayer } from '../front-end-model';
 import { durationFormatter } from "human-readable";
-import './pageCSS/Home.css';
-import "../components/darkMode.css";
+// import './pageCSS/Home.css';
+// import "../components/darkMode.css";
+import "../Master.css";
 
 
 interface HomeProps {
@@ -51,29 +51,12 @@ export const Home: React.FC<HomeProps> = ({
 	, avgFarklesPerGame
 }) => {
 
-	const [theme, setTheme] = useState('light');
-
-	useEffect(() => {
-		document.body.className = theme;
-	}, [theme]);
-
-
-	const toggleTheme = () => {
-		if (theme === 'light') {
-			setTheme('dark');
-		} else {
-			setTheme('light');
-		}
-	};
-
 	const format = durationFormatter();
 
 	return (
 		<IonPage>
 			<MainHeader />
 			<IonContent fullscreen={true}>
-				<div className={`App ${theme}`}>
-
 					<IonHeader collapse="condense">
 						<IonToolbar>
 							<IonTitle size="large">Farkle App</IonTitle>
@@ -232,7 +215,7 @@ export const Home: React.FC<HomeProps> = ({
 							</IonCol>
 						</IonRow>
 
-						{/* Really Cool THing Happened */}
+						{/* Really Cool Thing Happened */}
 						{/* <IonRow>
 							<IonCol>
 								<IonCard>
@@ -254,7 +237,6 @@ export const Home: React.FC<HomeProps> = ({
 							</IonCol>
 						</IonRow>
 					</IonGrid>
-				</div>
 				{/* <MainContent /> */}
 			</IonContent>
 		</IonPage >

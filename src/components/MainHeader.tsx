@@ -1,17 +1,25 @@
-import {
-    IonHeader,
-    IonTitle,
+import { 
+    IonHeader, 
+    IonTitle, 
     IonToolbar,
-
-} from '@ionic/react';
+    IonRow,
+    IonCol
+} from "@ionic/react";
+import { DarkMode } from "./DarkMode";
 
 export const MainHeader: React.FC = () => {
-    return (
-        <IonHeader translucent={true}>
-            <IonToolbar>
-                <IonTitle>Farkle App</IonTitle>
+	return (
+		<IonHeader translucent={true}>
+			<IonToolbar>
+				<IonTitle>Farkle App</IonTitle>
+				
+                <IonRow>
+					<IonCol className="darkModeContainer">
+						<DarkMode />
+					</IonCol>
+				</IonRow>
+			
             </IonToolbar>
-        </IonHeader>
-    );
+		</IonHeader>
+	);
 };
-
